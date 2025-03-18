@@ -22,7 +22,9 @@ class Rectangle:
     
     def boundingCircle(self):
         from circle import Circle
-        return Circle(Vector(self.center.x,self.center.y), Vector(self.width/2,self.height/2).length())
+        # The circle that bounds this must have a diameter of the diagonal, and the same center
+        return Circle(self.center, Vector(self.width/2,self.height/2).length())
+    
     def __str__(self):
         return f"|{self.center},w={self.width},h={self.height}|"
     
