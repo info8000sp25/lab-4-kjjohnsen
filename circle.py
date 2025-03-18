@@ -13,6 +13,8 @@ class Circle:
         return 2 * math.pi * self.radius
     def insideSquare(self):
         from rectangle import Rectangle
+        # The square inside has a diagonal of 2r
+        # Byte the pythagorean theorem, s^2 + s^2 = (2r)^2, so s = r*sqrt(2)
         s = self.radius*math.sqrt(2) 
         return Rectangle(self.center,s,s)
     
